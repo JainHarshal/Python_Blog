@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ 
+<div class="container alert alert-success">
+    <h1>{{post.title}}</h1>
+    <small>by {{post.author}}</small>
+    <br>
+    <small>{{post.datetime}}</small>
+    <br>
+    <strong>
+        <a href="{% url 'edit' post.pk %}" style="color:rgb(33, 20, 220) ; text-decoration: none ! important">Edit</a>
+    <br>
+        <a href="{% url 'delete' post.pk %}" style="color:crimson ; text-decoration: none ! important">Delete</a> 
+
+</strong>
+    <br>
+</div>
+<div class="container">
+<p class="lead">{{post.description}}</p>
+<br>
+</div>
+<div class="container bg-dark text-light">
+<pre><code>{{post.code}}</code></pre>
+</div>
+
+{% endblock %}
